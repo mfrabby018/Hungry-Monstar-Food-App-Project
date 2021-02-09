@@ -17,7 +17,6 @@ const getMealData = (inputMeal) => {
   fetch(`https://www.themealdb.com/api/json/v1/1/search.php?s=${inputMeal}`)
     .then((response) => response.json())
     .then((data) => {
-      console.log(data);
       if(data.meals === null){
         alert('No food items found');
       }else{
@@ -28,7 +27,6 @@ const getMealData = (inputMeal) => {
 // makingc individulal food item 
 const foodBlock = (meals) => {
   meals.forEach((meal) => {
-    console.log(meal.strMeal);
     const foodCard = document.createElement('div');
     foodCard.className = 'col';
     foodCard.innerHTML = `
